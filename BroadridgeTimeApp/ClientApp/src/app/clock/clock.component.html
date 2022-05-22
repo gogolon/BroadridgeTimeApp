@@ -1,0 +1,21 @@
+<div class="content" [hidden]="isLoading">
+  <div class="center-screen" *ngIf="!error">
+    Strefa czasowa: {{ dateTimeData.timezone }} <br>
+    Data i godzina: {{ time | date: 'dd.MM.yyyy HH:mm:ss'  }}
+  </div>
+
+  <p class="error" *ngIf="error">
+    {{ errorMessage }}
+  </p>
+
+  <div *ngIf="showTimezonesList">
+    <p>Lista dostępnych stref czasowych:</p>
+    <ul class="grid-list">
+      <li *ngFor="let tz of timezones">
+        {{ tz }}
+      </li>
+    </ul>
+  </div>
+</div>
+
+
